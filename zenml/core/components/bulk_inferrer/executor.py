@@ -158,5 +158,4 @@ class BulkInferrerExecutor(base_executor.BaseExecutor):
                     beam.Map(convert_to_dict, output_example_spec)
                     | 'WriteOutput[{}]'.format(split) >>
                     inferrer_step.write_inference_results())
-
             logging.info('Output examples written to %s.', output_examples.uri)
